@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+            <header>
+                <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>Welkom in onze winkel</title>
+                        <link rel="stylesheet" href="style.css">
+                      
+                    <body>
+                        <header>
+                            <header>
+                                <a href="./webshop.html" ></a>
+                            </header>
+                            <h1>Welkom in onze winkel</h1>
+                        </header>
+                    
+                        <nav>
+                            <ul>
+                                <li><a href="webshop.html">ℍ𝕠𝕞𝕖</a></li>
+                                <li><a href="merken.html">𝕄𝕖𝕣𝕜𝕖𝕟</a></li>
+                                <li><a href="contact.html">ℂ𝕠𝕟𝕥𝕒𝕔𝕥</a></li>
+                                <li><a href="about.html">𝕂𝕝𝕒𝕟𝕥𝕖𝕟𝕤𝕖𝕣𝕧𝕚𝕔𝕖</a></li>
+                            </ul>
+                        </nav>
+                        <hr>
+                        <p class="paratext">ℙ𝕣𝕠𝕕𝕦𝕔𝕥𝕖𝕟</p>
+                        <section class="producten">
+                            <article class="product">
+                                <h3>Product 1</h3>
+                                <img src="shirt.png" alt="Product 1" width="250" height="333">
+                                <p>𝐏𝐫𝐢𝐣𝐬: €𝟓𝟎</p>
+                                <button onclick="addToCart('Product 1', 50)">Voeg toe aan winkelmandje</button>
+                            </article>
+                            <hr>
+                            <article class="product">
+                                <h3>Product 2</h3>
+                                <img src="jd_345454_c.png" alt="Product 2" width="250" height="333">
+                                <p>𝐏𝐫𝐢𝐣𝐬: €𝟓𝟎</p>
+                                <button onclick="addToCart('Product 2', 50)">Voeg toe aan winkelmandje</button>
+                            </article>
+                            
+                            <!-- Voeg meer producten toe zoals hierboven -->
+                        </section>
+                        <hr>
+                        <section class="winkelmandje">
+                            <h2>Winkelmandje 🛒</h2>
+                            <ul id="cartItems">
+                                <!-- Hier worden de geselecteerde producten weergegeven -->
+                            </ul>
+                            <p>𝐓𝐨𝐭𝐚𝐚𝐥:<span id="cartTotal">€0</span></p>
+                        </section>
+                    
+                        <script>
+                            const cart = [];
+                    
+                            function addToCart(product, price) {
+                                cart.push({ product, price });
+                                updateCart();
+                            }
+                    
+                            function updateCart() {
+                                const cartItems = document.getElementById('cartItems');
+                                const cartTotal = document.getElementById('cartTotal');
+                                cartItems.innerHTML = '';
+                                let total = 0;
+                    
+                                for (const item of cart) {
+                                    const listItem = document.createElement('li');
+                                    listItem.textContent = `${item.product} - €${item.price}`;
+                                    cartItems.appendChild(listItem);
+                                    total += item.price;
+                                }
+                    
+                                cartTotal.textContent = `€${total}`;
+                            }
+                            
+
+                        </script>
+                       
+</body>
+</html>
