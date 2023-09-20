@@ -32,4 +32,24 @@ li a:hover {
   .paratext {
     color: purple;
 font-size: x-large;
-  }
+}
+
+.producten {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  padding: 2%;
+}
+
+.product {
+  width: 50%;
+}
+
+title {
+text-align: center;
+
+}
+
+.midden{
+text-align: center;
+
+}
